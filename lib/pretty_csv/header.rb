@@ -1,11 +1,15 @@
-class PrettyCsv::Header
+module PrettyCsv
 
-  attr_accessor :name, :index
+  class Header
+
+    attr_accessor :name, :index
 
 
-  def initialize(opts = {})
-    @name = opts[:name].underscore.parameterize.underscore
-    @index = opts[:index]
+    def initialize(opts = {})
+      @name = opts[:name].underscore.parameterize.underscore
+      @index = opts[:index]
+    end
+
   end
 
 end

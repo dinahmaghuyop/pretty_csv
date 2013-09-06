@@ -1,11 +1,17 @@
-Gem::Specification.new do |s|
-  s.name        = 'pretty_csv'
-  s.version     = '0.0.0'
-  s.date        = '2013-09-06'
-  s.summary     = "Reading CSV has never been this pretty!"
-  s.description = "A simple gem to help reading CSV files easier (and prettier!)."
-  s.authors     = ["Dinah Maghuyop"]
-  s.email       = 'dinahmaghuyop@gmail.com'
-  s.files       = ["lib/pretty_csv.rb", "lib/pretty_csv/header.rb", "lib/pretty_csv/row.rb"]
-  s.homepage    = 'http://rubygems.org/gems/pretty-csv'
+# -*- encoding: utf-8 -*-
+require File.expand_path('../lib/pretty_csv/version', __FILE__)
+
+Gem::Specification.new do |gem|
+  gem.authors       = ["dinahmaghuyop"]
+  gem.email         = ["dinahmaghuyop@gmail.com"]
+  gem.description   = "A simple gem to help reading CSV files easier (and prettier!)."
+  gem.summary       = "Reading CSV has never been this pretty!"
+  gem.homepage      = ""
+
+  gem.files         = `git ls-files`.split($\)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.name          = "pretty_csv"
+  gem.require_paths = ["lib"]
+  gem.version       = PrettyCsv::VERSION
 end
